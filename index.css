@@ -6,6 +6,7 @@
   --brand-identity--font-weight: 300;
   --brand-identity--line-height: 1.5;
   --brand-identity--font-family: "Tt Commons Pro", Arial, sans-serif;
+  --focus-outline-color: #0078d7;
 }
 
 html {
@@ -54,6 +55,43 @@ a {
 a:hover {
   text-decoration: underline;
   text-underline-offset: 10px;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:focus:not(:focus-visible) {
+  box-shadow: none;
+}
+
+.keyboard-nav a:focus,
+.keyboard-nav button:focus,
+.keyboard-nav [tabindex="0"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--brand-identity--tea-green), 0 0 0 5px var(--brand-identity--night-rider);
+  border-radius: 5px;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--brand-identity--night-rider);
+  color: var(--brand-identity--seashell);
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--focus-outline-color);
+  padding:8px;
+}
+
+#main-content:focus {
   outline: none;
 }
 

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Kratharth Hegde - Full Stack Engineer specializing in front-end development and intuitive user interfaces" />
     <title>Kratharth Hegde</title>
     <link rel="stylesheet" href="index.css" />
     <script
@@ -11,6 +12,7 @@
     ></script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="site-header">
       <nav class="main-nav">
         <h1 class="site-title">
@@ -20,8 +22,8 @@
           <span>Kratharth Hegde</span>
         </h1>
         <ul class="nav-list">
+          <li class="nav-item"><a href="about.html">About</a></li>
           <li class="nav-item"><a href="#projects">Projects</a></li>
-          <li class="nav-item"><a href="#">About</a></li>
           <li class="nav-item"><a href="#contact-me">Contact</a></li>
           <li class="nav-item">
             <a href="https://github.com/kratharth-1999" target="_blank"
@@ -52,7 +54,7 @@
         </ul>
       </nav>
     </header>
-    <main class="main-content">
+    <main class="main-content" id="main-content" tabindex="-1">
       <section class="intro-section-wrapper">
         <div class="intro-section" id="intro">
           <div class="intro-section-content">
@@ -62,7 +64,7 @@
               specializing in front-end development and intuitive user
               interfaces.
             </p>
-            <a class="button fade-in" href="#">About me</a>
+            <a class="button fade-in" href="about.html">About me</a>
           </div>
           <div class="intro-section-image">
             <img
@@ -212,33 +214,27 @@
       </h3>
       <ul class="nav-list">
         <li class="nav-item">
-          <a href="https://github.com/kratharth-1999" target="_blank"
-            ><span class="fa fa-github" aria-hidden="true">
-              <span class="sr-only">Github</span>
-            </span></a
+          <a href="https://github.com/kratharth-1999" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile (opens in new tab)"
+            ><span class="fa fa-github" aria-hidden="true"></span></a
           >
         </li>
         <li class="nav-item">
           <a
             href="https://linkedin.com/in/kratharth-hegde-b464a0148"
             target="_blank"
-            ><span class="fa fa-linkedin" aria-hidden="true"
-              ><span class="sr-only">LinkedIn</span></span
-            ></a
+            rel="noopener noreferrer"
+            aria-label="LinkedIn Profile (opens in new tab)"
+            ><span class="fa fa-linkedin" aria-hidden="true"></span></a
           >
         </li>
         <li class="nav-item">
-          <a href="https://leetcode.com/u/kratharth_hegde/" target="_blank"
-            ><span class="fa-solid fa-code" aria-hidden="true"
-              ><span class="sr-only">Leetcode</span></span
-            ></a
+          <a href="https://leetcode.com/u/kratharth_hegde/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode Profile (opens in new tab)"
+            ><span class="fa-solid fa-code" aria-hidden="true"></span></a
           >
         </li>
         <li class="nav-item">
-          <a href="mailto:kratharth2008@gmail.com"
-            ><span class="fa-regular fa-envelope" aria-hidden="true"
-              ><span class="sr-only">Email me</span></span
-            ></a
+          <a href="mailto:kratharth2008@gmail.com" aria-label="Send email to Kratharth"
+            ><span class="fa-regular fa-envelope" aria-hidden="true"></span></a
           >
         </li>
       </ul>
@@ -247,6 +243,7 @@
       </p>
     </footer>
     <script>
+      // Ensure animations don't interfere with accessibility
       const elementsToAnimate = document.querySelectorAll(
         ".fade-in, .slide-up, .image-fade-in, .image-scale-up"
       );
@@ -266,6 +263,19 @@
 
       elementsToAnimate.forEach((element) => {
         observer.observe(element);
+      });
+      
+      // Improve keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        // Add focus styles when using keyboard navigation
+        if (e.key === 'Tab') {
+          document.body.classList.add('keyboard-nav');
+        }
+      });
+      
+      // Remove keyboard focus styles when using mouse
+      document.addEventListener('mousedown', function() {
+        document.body.classList.remove('keyboard-nav');
       });
     </script>
   </body>
