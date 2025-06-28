@@ -316,21 +316,41 @@ nav h1 [class*="fa-"] {
     grid-template-columns: repeat(10, 1fr);
     gap: 1rem;
   }
-  .project-content {
+  .project:nth-child(odd) .project-content {
     grid-column: 5/11;
     order: 2;
     text-align: right;
     grid-row: 1/2;
   }
-  .project-title {
+  .project:nth-child(odd) .project-title {
     margin-left: auto;
+    margin-right: 0;
   }
-  .project-box-footer {
+  .project:nth-child(odd) .project-box-footer {
     flex-direction: row-reverse;
   }
-  .project-image {
+  .project:nth-child(odd) .project-image {
     grid-column: 1/6;
     grid-row: 1/2;
+    order: 1;
+  }
+  .project:nth-child(even) .project-content {
+    grid-column: 1/7;
+    order: 1;
+    text-align: left;
+    grid-row: 1/2;
+  }
+  .project:nth-child(even) .project-title {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  .project:nth-child(even) .project-box-footer {
+    flex-direction: row;
+  }
+  .project:nth-child(even) .project-image {
+    grid-column: 6/11;
+    grid-row: 1/2;
+    order: 2;
   }
 }
 
